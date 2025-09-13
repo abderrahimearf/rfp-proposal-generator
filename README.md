@@ -26,8 +26,21 @@ pip install poetry
 
 poetry install
 cd ./Backend
+
 ```
-### 4. Running the Application
+### 4. Download the model file
+
+The main model file `svm_semantic_pipeline_final.joblib` is not included in this repository (too large for GitHub).
+
+Please download it from Google Drive: [Download Link](https://drive.google.com/drive/folders/1ptcwGEApp7JCgbLcUSr_AYiPkjiPfJmx?usp=drive_link)
+
+After downloading, place the file at:
+```bash
+
+backend/svm_semantic_pipeline_final.joblib
+```
+
+### 5. Running the Application
 ```bash
 
 poetry run python wsgi.py
