@@ -1,6 +1,20 @@
 # Backend Setup and Launch
 
 This guide will explain how to clone the repository, install dependencies, and run the backend project.
+##  Environment Variables
+
+This project requires a `.env` file to store API keys and configuration values.  
+The `.env` file is **not included** in the repository for security reasons.
+
+### Steps to create it:
+
+1. Create a new file named `.env` in the root of the backend project (same folder as `wsgi.py`).
+2. Copy the content from `.env.example` into this `.env` file.
+3. Replace the placeholder values with your own credentials.
+
+
+
+
 ## Installation
 
 Follow these steps to set up the development environment.
