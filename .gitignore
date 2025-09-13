@@ -1,0 +1,16 @@
+backend/svm_semantic_pipeline_final.joblib
+*.joblib
+backend/services/models/
+*.bin
+*.pt
+*.ckpt
+*.onnx
+*.h5
+*.safetensors
+*.tar
+*.gz
+*.zip
+
+__pycache__/
+*.pyc
+.env

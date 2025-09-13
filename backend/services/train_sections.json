@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Publication d'un avis d'appel d'offres",
+    "content": "L'autorité contractante publie un avis d'appel d'offres sur le portail officiel afin de sélectionner un prestataire pour la réalisation du projet X. L'avis précise la référence AO-2025/001 et la date limite de soumission.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "avis_appel_offres"
+  },
+  {
+    "title": "Annonce de consultation publique",
+    "content": "Un avis est publié dans le journal officiel pour informer les entreprises intéressées de l'ouverture d'une procédure de consultation, référence : AO-2025-003.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "avis_appel_offres"
+  },
+  {
+    "title": "Liste des abréviations utilisées",
+    "content": "Le document contient les abréviations suivantes : AO : Appel d’Offres, PV : Procès-Verbal, RFI : Request For Information.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "definitions_abreviations"
+  },
+  {
+    "title": "Glossaire du dossier",
+    "content": "Ce glossaire précise les termes techniques et administratifs utilisés dans le cadre du marché : soumissionnaire, adjudicataire, avenant.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "definitions_abreviations"
+  },
+  {
+    "title": "Calendrier prévisionnel du projet",
+    "content": "Les principales étapes du marché sont prévues comme suit : dépôt des offres le 15/09/2025, ouverture des plis le 22/09/2025, attribution prévue le 30/09/2025.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "calendrier_planning"
+  },
+  {
+    "title": "Planning des jalons contractuels",
+    "content": "Un tableau indique les jalons clés : livraison phase 1 au 01/11/2025, phase 2 au 15/12/2025.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "calendrier_planning"
+  },
+  {
+    "title": "Conditions d'éligibilité des soumissionnaires",
+    "content": "Les entreprises doivent justifier d'une expérience d'au moins trois projets similaires au cours des cinq dernières années.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "eligibilite_conditions"
+  },
+  {
+    "title": "Critères d’admissibilité",
+    "content": "Le soumissionnaire doit disposer d’un chiffre d’affaires annuel minimum de 2 millions d’euros et d’un effectif technique qualifié.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "eligibilite_conditions"
+  },
+  {
+    "title": "Séance de visite de site",
+    "content": "Une visite de site est organisée le 10/09/2025 à 10h00. Les soumissionnaires doivent confirmer leur présence par e-mail.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "clarifications_visite"
+  },
+  {
+    "title": "Réponse aux questions des soumissionnaires",
+    "content": "Un addendum est publié pour répondre aux questions reçues avant la date limite, modifiant certaines spécifications techniques.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "clarifications_visite"
+  },
+  {
+    "title": "Instructions de soumission des offres",
+    "content": "Les offres doivent être déposées en deux exemplaires papier et un exemplaire numérique sur clé USB, sous pli scellé.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "soumission_instructions"
+  },
+  {
+    "title": "Règles pour le dépôt des propositions",
+    "content": "Les soumissionnaires doivent utiliser la plateforme électronique officielle avant 16h00, heure locale, le jour de clôture.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "soumission_instructions"
+  },
+  {
+    "title": "Procès-verbal d'ouverture des plis",
+    "content": "La séance publique d'ouverture des plis s’est tenue le 22/09/2025 à 09h30, en présence des représentants des soumissionnaires.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "ouverture_plis"
+  },
+  {
+    "title": "Séance d’ouverture publique",
+    "content": "Les plis reçus ont été ouverts devant les membres de la commission et les noms des soumissionnaires ont été annoncés.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "ouverture_plis"
+  },
+  {
+    "title": "Durée de validité des offres",
+    "content": "Les offres doivent rester valides pendant une période de 120 jours à compter de la date limite de soumission.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "validite_offre"
+  },
+  {
+    "title": "Maintien des conditions d’offre",
+    "content": "Pendant toute la période de validité, le soumissionnaire s'engage à ne pas modifier son prix ni ses conditions.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "validite_offre"
+  },
+  {
+    "title": "Méthodologie d'évaluation",
+    "content": "La note technique comptera pour 70% et la note financière pour 30%, avec une note minimale de 60/100 requise pour passer à l'étape suivante.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "criteres_evaluation"
+  },
+  {
+    "title": "Grille de notation des offres",
+    "content": "La grille d’évaluation inclut la pertinence technique (40 points), la méthodologie (30 points) et le prix (30 points).",
+    "classe": "Administratif & Processus",
+    "sous_classe": "criteres_evaluation"
+  },
+  {
+    "title": "Notification d'attribution",
+    "content": "Le marché est attribué à l'entreprise ABC pour un montant de 1,2 million d'euros. La notification est transmise par courrier officiel.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "attribution_resultats"
+  },
+  {
+    "title": "Résultat du classement des offres",
+    "content": "L'autorité publie le classement final et informe les soumissionnaires non retenus de la possibilité de recours.",
+    "classe": "Administratif & Processus",
+    "sous_classe": "attribution_resultats"
+  },
+  {
+    "title": "Définition de l'objet et du périmètre",
+    "content": "Le marché a pour objet la fourniture et l'installation d'une solution de gestion documentaire couvrant l'ensemble des départements de l'organisation.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "objet_perimetre"
+  },
+  {
+    "title": "Champ d'application du projet",
+    "content": "Le périmètre comprend la mise en place du système, la formation des utilisateurs et l'assistance technique pendant 12 mois.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "objet_perimetre"
+  },
+  {
+    "title": "Spécifications techniques minimales",
+    "content": "La solution doit être conforme aux normes ISO 27001 et offrir un chiffrement des données AES-256.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "exigences_techniques"
+  },
+  {
+    "title": "Cahier des charges technique",
+    "content": "Le système doit permettre la gestion simultanée de 500 utilisateurs connectés avec un temps de réponse inférieur à 2 secondes.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "exigences_techniques"
+  },
+  {
+    "title": "Livrables attendus du prestataire",
+    "content": "Le prestataire doit fournir le code source, la documentation technique, et un manuel d’utilisation pour chaque module livré.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "livrables_prestations"
+  },
+  {
+    "title": "Prestations incluses",
+    "content": "La prestation comprend l’installation, la configuration, la formation des administrateurs et le support technique pendant 6 mois.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "livrables_prestations"
+  },
+  {
+    "title": "Délai d'exécution des travaux",
+    "content": "Le projet doit être achevé dans un délai maximum de 120 jours à compter de la date de notification du marché.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "delais_execution"
+  },
+  {
+    "title": "Planning détaillé d’exécution",
+    "content": "Le planning prévoit la livraison du lot 1 au 15/10/2025, du lot 2 au 30/11/2025, et la mise en production finale au 15/12/2025.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "delais_execution"
+  },
+  {
+    "title": "Niveaux de service garantis",
+    "content": "Le prestataire s’engage à assurer une disponibilité de 99,5% du service, avec un temps de rétablissement maximum de 4 heures.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "sla_qualite"
+  },
+  {
+    "title": "Indicateurs de performance et pénalités",
+    "content": "Un SLA définit les KPI : temps de réponse < 2 secondes, taux de panne < 0,5%. Des pénalités s’appliquent en cas de non-respect.",
+    "classe": "Technique & Périmètre",
+    "sous_classe": "sla_qualite"
+  },
+  {
+    "title": "Bordereau des prix unitaires (BPU) - Lot Réseau",
+    "content": "Le BPU précise les prix unitaires pour chaque article : câble Cat6 (ml), baie 42U (unité), point d’accès (unité). Les quantités prévisionnelles sont indiquées à titre estimatif pour l’évaluation.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "bordereau_prix_bpu"
+  },
+  {
+    "title": "Détail quantitatif et estimatif (DQE)",
+    "content": "Le DQE récapitule les postes chiffrés : 2 500 ml de câblage, 80 points utilisateurs, 6 armoires techniques. Les prix unitaires du BPU s’y appliquent pour obtenir le montant estimatif.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "bordereau_prix_bpu"
+  },
+  {
+    "title": "Décomposition du prix global et forfaitaire (DPGF)",
+    "content": "Le prix forfaitaire est décomposé en postes : études (10%), fourniture (55%), installation (25%), formation (5%), documentation et mise en service (5%).",
+    "classe": "Financier & Commercial",
+    "sous_classe": "decomposition_prix"
+  },
+  {
+    "title": "Modalités de remises et rabais",
+    "content": "Le soumissionnaire propose une remise commerciale de 3% sur le montant hors taxes du BPU et un rabais conditionnel de 2% en cas de commande groupée de deux lots.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "decomposition_prix"
+  },
+  {
+    "title": "Conditions de paiement et facturation",
+    "content": "Paiement par virement bancaire sous 30 jours fin de mois à réception des factures et PV de conformité. Les acomptes sont autorisés selon l’avancement validé.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "paiement_conditions"
+  },
+  {
+    "title": "Acomptes et retenue de garantie",
+    "content": "Acompte de 20% à la notification de l’ordre de service, 60% à la livraison, 20% à la réception définitive. Retenue de garantie de 5% (ou garantie bancaire équivalente).",
+    "classe": "Financier & Commercial",
+    "sous_classe": "paiement_conditions"
+  },
+  {
+    "title": "Révision des prix indexée",
+    "content": "Les prix sont révisables trimestriellement selon la formule : P = Po × (0,25 + 0,35 × I1/Io + 0,40 × I2/Io), où I1 et I2 sont les indices officiels des matériaux et de la main-d’œuvre.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "revision_variation_prix"
+  },
+  {
+    "title": "Actualisation et variation",
+    "content": "Une actualisation unique est appliquée entre la date de remise des offres et la date d’effet du marché. Les variations supérieures à ±5% déclenchent un avenant d’ajustement.",
+    "classe": "Financier & Commercial",
+    "sous_classe": "revision_variation_prix"
+  },
+  {
+    "title": "Garantie de bonne exécution",
+    "content": "Le titulaire fournit une garantie bancaire équivalente à 10% du montant du marché, valable jusqu’à la réception définitive des prestations.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "garanties_cautions"
+  },
+  {
+    "title": "Caution provisoire",
+    "content": "Le soumissionnaire joint à son offre une caution provisoire d’un montant de 50 000 EUR, émise par une banque agréée.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "garanties_cautions"
+  },
+  {
+    "title": "Assurance responsabilité civile",
+    "content": "Le titulaire doit fournir une attestation d’assurance responsabilité civile couvrant les dommages matériels et corporels causés à des tiers.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "assurances"
+  },
+  {
+    "title": "Assurance tous risques chantier",
+    "content": "Avant le démarrage des travaux, le prestataire souscrit une assurance tous risques chantier couvrant l’ensemble des équipements installés.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "assurances"
+  },
+  {
+    "title": "Pénalités pour retard de livraison",
+    "content": "Des pénalités de 1‰ du montant du marché par jour calendaire de retard sont appliquées, dans la limite de 10% du total du contrat.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "penalites_sanctions"
+  },
+  {
+    "title": "Sanctions pour non-conformité",
+    "content": "En cas de non-respect des spécifications techniques, une pénalité forfaitaire de 5 000 EUR par incident est appliquée.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "penalites_sanctions"
+  },
+  {
+    "title": "Protection des données et confidentialité",
+    "content": "Le prestataire s’engage à respecter la confidentialité des informations et à ne pas divulguer les données fournies par le client.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "propriete_confidentialite"
+  },
+  {
+    "title": "Propriété intellectuelle sur les livrables",
+    "content": "Les droits d’auteur sur les logiciels développés dans le cadre du marché sont transférés au client dès leur réception définitive.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "propriete_confidentialite"
+  },
+  {
+    "title": "Résiliation pour force majeure",
+    "content": "Le contrat peut être résilié sans indemnité en cas de force majeure empêchant l’exécution des obligations contractuelles pendant plus de 60 jours.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "resiliation_litiges"
+  },
+  {
+    "title": "Règlement des litiges",
+    "content": "Tout différend relatif à l’exécution du marché sera soumis à l’arbitrage selon le règlement de la Chambre de Commerce Internationale, siège à Paris.",
+    "classe": "Juridique & Contractuel",
+    "sous_classe": "resiliation_litiges"
+  },
+  {
+    "title": "Modèle d’acte d’engagement",
+    "content": "L'annexe inclut un modèle d’acte d’engagement à compléter, signer et joindre à l’offre, conformément au format prescrit par l’autorité contractante.",
+    "classe": "Annexes",
+    "sous_classe": "formulaires_modeles"
+  },
+  {
+    "title": "Formulaire de déclaration sur l'honneur",
+    "content": "Le soumissionnaire doit remplir et signer la déclaration sur l'honneur attestant qu’il n’est pas en situation d’exclusion des marchés publics.",
+    "classe": "Annexes",
+    "sous_classe": "formulaires_modeles"
+  },
+  {
+    "title": "Attestation de régularité fiscale",
+    "content": "Le candidat joint une attestation délivrée par l’administration fiscale certifiant qu’il est à jour de ses obligations fiscales.",
+    "classe": "Annexes",
+    "sous_classe": "attestations_certificats"
+  },
+  {
+    "title": "Certificat d’affiliation CNSS",
+    "content": "Une copie du certificat d’affiliation à la Caisse Nationale de Sécurité Sociale est exigée pour valider l’éligibilité administrative.",
+    "classe": "Annexes",
+    "sous_classe": "attestations_certificats"
+  },
+  {
+    "title": "Plan d’implantation du chantier",
+    "content": "L’annexe comprend un plan détaillé d’implantation des installations et des zones de travail sur le site.",
+    "classe": "Annexes",
+    "sous_classe": "plans_schemas_annexes"
+  },
+  {
+    "title": "Schéma technique de câblage",
+    "content": "Un schéma technique illustre l’architecture du réseau et la localisation des points d’accès dans les bâtiments concernés.",
+    "classe": "Annexes",
+    "sous_classe": "plans_schemas_annexes"
+  },
+  {
+    "title": "Présentation de l'entreprise ABC",
+    "content": "Fondée en 2005, ABC est spécialisée dans le développement de solutions logicielles sur mesure pour les administrations publiques et les entreprises privées.",
+    "classe": "Présentation & Contact",
+    "sous_classe": "presentation_entreprise"
+  },
+  {
+    "title": "Profil de la société TechGlobal",
+    "content": "TechGlobal opère dans le secteur des télécommunications depuis 15 ans et a participé à plus de 120 projets d’infrastructures dans 8 pays.",
+    "classe": "Présentation & Contact",
+    "sous_classe": "presentation_entreprise"
+  },
+  {
+    "title": "Références de projets similaires",
+    "content": "Projet de déploiement d’un réseau sécurisé pour le Ministère de l’Intérieur (2022), mise en place d’une plateforme e-learning pour l’Université Nationale (2023).",
+    "classe": "Présentation & Contact",
+    "sous_classe": "references_projets"
+  },
+  {
+    "title": "Expériences et clients principaux",
+    "content": "Partenaire technologique de la Banque Centrale, de la Poste Nationale et du Ministère de la Santé pour des projets de transformation numérique.",
+    "classe": "Présentation & Contact",
+    "sous_classe": "references_projets"
+  },
+  {
+    "title": "Coordonnées de contact",
+    "content": "Adresse : 25 Avenue Hassan II, Rabat - Téléphone : +212 5 37 00 00 00 - Email : contact@abc.ma.",
+    "classe": "Présentation & Contact",
+    "sous_classe": "contact_coordonnees"
+  },
+  {
+    "title": "Représentant légal",
+    "content": "Monsieur Ahmed El Mansouri, Directeur Général, est désigné comme représentant légal de la société pour la présente procédure.",
+    "classe": "Présentation & Contact",
+    "sous_classe": "contact_coordonnees"
+  }
+]

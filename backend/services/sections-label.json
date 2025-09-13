@@ -1,0 +1,44 @@
+{
+  "Administratif & Processus": [
+    "avis_appel_offres",
+    "definitions_abreviations",
+    "calendrier_planning",
+    "eligibilite_conditions",
+    "clarifications_visite",
+    "soumission_instructions",
+    "ouverture_plis",
+    "validite_offre",
+    "criteres_evaluation",
+    "attribution_resultats"
+  ],
+  "Technique & Périmètre": [
+    "objet_perimetre",
+    "exigences_techniques",
+    "livrables_prestations",
+    "delais_execution",
+    "sla_qualite"
+  ],
+  "Financier & Commercial": [
+    "bordereau_prix_bpu",
+    "decomposition_prix",
+    "paiement_conditions",
+    "revision_variation_prix"
+  ],
+  "Juridique & Contractuel": [
+    "garanties_cautions",
+    "assurances",
+    "penalites_sanctions",
+    "propriete_confidentialite",
+    "resiliation_litiges"
+  ],
+  "Annexes": [
+    "formulaires_modeles",
+    "attestations_certificats",
+    "plans_schemas_annexes"
+  ],
+  "Présentation & Contact": [
+    "presentation_entreprise",
+    "references_projets",
+    "contact_coordonnees"
+  ]
+}

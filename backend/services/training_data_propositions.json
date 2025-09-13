@@ -1,0 +1,200 @@
+{
+  "training_data": [
+    {
+      "text": "Fondée en 2005, notre ESN est un leader de la transformation digitale.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "presentation_identite"
+      }
+    },
+    {
+      "text": "Notre mission est de transformer vos idées en solutions logicielles performantes.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "presentation_identite"
+      }
+    },
+    {
+      "text": "Certifiés ISO 27001 et partenaire Gold Microsoft, nous avons livré plus de 50 projets.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "capacites_references"
+      }
+    },
+    {
+      "text": "Notre succès auprès de ACME Corp démontre notre expertise.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "capacites_references"
+      }
+    },
+    {
+      "text": "L'objectif est de moderniser votre infrastructure pour réduire les coûts de 20%.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "contexte_objectifs"
+      }
+    },
+    {
+      "text": "Nous comprenons votre besoin d'améliorer l'expérience utilisateur.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "contexte_objectifs"
+      }
+    },
+    {
+      "text": "En d'autres termes, votre enjeu est une migration cloud sans interruption de service.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "reformulation_besoin"
+      }
+    },
+    {
+      "text": "Votre demande consiste donc à sécuriser les flux de données.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "reformulation_besoin"
+      }
+    },
+    {
+      "text": "La solution repose sur une architecture microservices sur Kubernetes.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "description_solution"
+      }
+    },
+    {
+      "text": "Nous développerons une application web en Vue.js avec une API Django.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "description_solution"
+      }
+    },
+    {
+      "text": "La sécurité est assurée par un cryptage de bout en bout et une conformité RGPD.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "qualite_securite"
+      }
+    },
+    {
+      "text": "Des tests de charge garantiront une performance maximale.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "qualite_securite"
+      }
+    },
+    {
+      "text": "Les livrables incluront le code source complet et la documentation technique.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "livrables_resultats"
+      }
+    },
+    {
+      "text": "Un rapport d'audit de sécurité sera fourni en fin de projet.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "livrables_resultats"
+      }
+    },
+    {
+      "text": "Notre approche s'appuiera sur la méthodologie Agile Scrum avec des sprints de deux semaines.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "approche_methodologie"
+      }
+    },
+    {
+      "text": "Nous suivrons un framework SAFe pour coordonner les équipes.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "approche_methodologie"
+      }
+    },
+    {
+      "text": "Un comité de pilotage hebdomadaire suivra l'avancement du projet.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "pilotage_planning"
+      }
+    },
+    {
+      "text": "Le planning détaillé prévoit un déploiement au troisième trimestre.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "pilotage_planning"
+      }
+    },
+    {
+      "text": "La gestion des risques sera suivie via une matrice dédiée.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "gestion_projet"
+      }
+    },
+    {
+      "text": "Notre plan d'assurance qualité inclut des tests unitaires et d'intégration.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "gestion_projet"
+      }
+    },
+    {
+      "text": "Le projet sera dirigé par un Chef de Projet certifié PMP.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "equipe_projet"
+      }
+    },
+    {
+      "text": "L'équipe sera composée de deux architectes cloud et trois développeurs.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "equipe_projet"
+      }
+    },
+    {
+      "text": "Notre proposition financière est basée sur un modèle au forfait de 150 000 €.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "proposition_financiere"
+      }
+    },
+    {
+      "text": "Nous proposons une facturation en régie avec un TJM de 650 € HT.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "proposition_financiere"
+      }
+    },
+    {
+      "text": "Cette proposition est soumise à nos conditions générales de vente.",
+      "labels": {
+        "classe": "Juridique",
+        "sous_classe": "cadre_contractuel"
+      }
+    },
+    {
+      "text": "Un contrat de service définissant les SLA sera établi.",
+      "labels": {
+        "classe": "Juridique",
+        "sous_classe": "cadre_contractuel"
+      }
+    },
+    {
+      "text": "Nous nous engageons à respecter la confidentialité des informations échangées.",
+      "labels": {
+        "classe": "Juridique",
+        "sous_classe": "conformite_administrative"
+      }
+    },
+    {
+      "text": "Toutes les données seront traitées en accord avec les réglementations RGPD.",
+      "labels": {
+        "classe": "Juridique",
+        "sous_classe": "conformite_administrative"
+      }
+    }
+  ]
+}

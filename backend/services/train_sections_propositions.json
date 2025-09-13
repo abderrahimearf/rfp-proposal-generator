@@ -1,0 +1,130 @@
+{
+  "training_data": [
+    {
+      "text": "Fondée en 2005, notre entreprise est un leader de la transformation digitale, guidée par des valeurs d'innovation et d'excellence. Vous pouvez nous contacter à notre siège social situé au 123 Rue de l'Innovation.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "presentation_identite"
+      }
+    },
+    {
+      "text": "Nous sommes une ESN spécialisée dans le développement d'applications sur-mesure. Notre mission est de transformer vos idées en solutions logicielles performantes et pérennes.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "presentation_identite"
+      }
+    },
+    {
+      "text": "Notre identité repose sur trois piliers : l'expertise technique, l'agilité et un engagement fort envers la réussite de nos clients. Pour toute question, notre service commercial est joignable au 01.23.45.67.89.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "presentation_identite"
+      }
+    },
+    {
+      "text": "Avec plus de 150 consultants certifiés ISO 27001 et un partenariat Gold avec Microsoft, notre capacité à livrer des projets complexes est démontrée par notre succès auprès de clients comme ACME Corp.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "capacites_references"
+      }
+    },
+    {
+      "text": "Notre expertise est reconnue par le label 'Entreprise Numérique Responsable' et nous avons mené à bien plus de 50 projets de migration cloud pour des entreprises du CAC40.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "capacites_references"
+      }
+    },
+    {
+      "text": "Certifiés AWS Advanced Partner, nous avons accompagné le groupe DUPONT dans la refonte de sa plateforme e-commerce, résultant en une augmentation de 30% de leur taux de conversion.",
+      "labels": {
+        "classe": "Societe",
+        "sous_classe": "capacites_references"
+      }
+    },
+    {
+      "text": "Nous avons bien noté que l'objectif principal de ce projet est de moderniser votre infrastructure IT afin de réduire les coûts opérationnels de 20% tout en augmentant la flexibilité.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "contexte_objectifs"
+      }
+    },
+    {
+      "text": "Votre enjeu majeur, tel que nous l'avons compris, réside dans la nécessité d'améliorer l'expérience utilisateur de votre application mobile pour fidéliser votre clientèle.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "contexte_objectifs"
+      }
+    },
+    {
+      "text": "Le but de cette consultation est de sélectionner un partenaire capable de garantir la sécurité et la conformité RGPD de votre nouvelle plateforme de gestion de données.",
+      "labels": {
+        "classe": "ComprehensionBesoin",
+        "sous_classe": "contexte_objectifs"
+      }
+    },
+    {
+      "text": "La solution proposée repose sur une architecture microservices déployée sur un cluster Kubernetes, offrant une séparation claire des fonctionnalités et une scalabilité optimale.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "description_solution"
+      }
+    },
+    {
+      "text": "Nous développerons une application web progressive (PWA) en utilisant le framework Vue.js pour le frontend et une API RESTful basée sur Python/Django pour le backend.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "description_solution"
+      }
+    },
+    {
+      "text": "Notre proposition consiste à mettre en place un data lake sur la plateforme Google Cloud Platform, avec BigQuery pour l'analyse et Looker Studio pour la data visualisation.",
+      "labels": {
+        "classe": "Solution",
+        "sous_classe": "description_solution"
+      }
+    },
+    {
+      "text": "Notre approche s'appuiera sur la méthodologie Agile Scrum, avec des sprints de deux semaines pour garantir une visibilité constante et une adaptation rapide aux changements.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "approche_methodologie"
+      }
+    },
+    {
+      "text": "Nous adopterons un framework SAFe (Scaled Agile Framework) pour coordonner les différentes équipes impliquées dans ce programme d'envergure.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "approche_methodologie"
+      }
+    },
+    {
+      "text": "Pour ce projet, une approche en cycle en V est préconisée afin de garantir une validation rigoureuse à chaque étape, de la conception à la recette finale.",
+      "labels": {
+        "classe": "MiseEnOeuvre",
+        "sous_classe": "approche_methodologie"
+      }
+    },
+    {
+      "text": "Notre proposition financière est basée sur un modèle au forfait, pour un budget global de 150 000 €, garantissant une maîtrise totale des coûts pour votre entreprise.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "proposition_financiere"
+      }
+    },
+    {
+      "text": "Nous proposons une facturation en régie, basée sur un tarif journalier moyen (TJM) de 650 € HT pour nos consultants seniors.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "proposition_financiere"
+      }
+    },
+    {
+      "text": "Le coût total de la prestation est estimé à 85 jours-homme. Vous trouverez en annexe le détail des prix unitaires par profil.",
+      "labels": {
+        "classe": "EquipeEtTarifs",
+        "sous_classe": "proposition_financiere"
+      }
+    }
+  ]
+}

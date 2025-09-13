@@ -1,0 +1,278 @@
+[
+  {
+    "title": "Présentation de l'entreprise",
+    "content": "Fondée en 2012, <ENTREPRISE> est une ESN marocaine spécialisée en data et cloud avec des bureaux à Casablanca et Paris.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "presentation_identite"
+  },
+  {
+    "title": "Mission et valeurs",
+    "content": "Notre mission est d'accélérer la transformation digitale grâce à l'innovation, la transparence et la qualité de service.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "presentation_identite"
+  },
+  {
+    "title": "Certification et présence",
+    "content": "Entreprise certifiée ISO 9001, intervenant dans la banque, l'assurance, les télécoms et l'industrie.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "presentation_identite"
+  },
+
+
+  {
+    "title": "Effectif et gouvernance",
+    "content": "120 collaborateurs, gouvernance familiale et filiales à Rabat et Lyon.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "presentation_identite"
+  },
+
+  {
+    "title": "Références majeures",
+    "content": "Banque X, Opérateur Y, Ministère Z et Groupe industriel A nous font confiance.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "capacites_references"
+  },
+  {
+    "title": "Cas client Data Lake",
+    "content": "Mise en place d’un data lake Hadoop pour un telco avec 30% de réduction du temps de reporting.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "capacites_references"
+  },
+  {
+    "title": "Migration Cloud",
+    "content": "Migration de 150 VM vers Azure pour une banque, réalisée sans interruption de service.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "capacites_references"
+  },
+  {
+    "title": "Centre de services",
+    "content": "SLA 99,8% et temps de prise en charge moyen inférieur à 30 minutes.",
+    "classe": "PresentationEntreprise",
+    "sous_classe": "capacites_references"
+  },
+
+  {
+    "title": "Architecture microservices",
+    "content": "Front web React, API REST Node.js et microservices sur Kubernetes pour une scalabilité horizontale.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "description_solution"
+  },
+  {
+    "title": "Persistance et cache",
+    "content": "PostgreSQL pour le stockage, Redis en cache et files d’attente avec RabbitMQ.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "description_solution"
+  },
+  {
+    "title": "Sécurité d'accès",
+    "content": "Authentification OAuth2/OpenID Connect, SSO et gestion des rôles RBAC.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "description_solution"
+  },
+  {
+    "title": "Application mobile",
+    "content": "App Flutter iOS/Android synchronisée en temps réel via WebSocket.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "description_solution"
+  },
+
+  {
+    "title": "Sécurité & chiffrement",
+    "content": "Chiffrement AES-256 au repos, TLS 1.2+ en transit, rotation des clés via KMS.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "qualite_securite"
+  },
+  {
+    "title": "Conformité RGPD",
+    "content": "Minimisation des données, DPA, journalisation et anonymisation des jeux de test.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "qualite_securite"
+  },
+  {
+    "title": "Stratégie de tests",
+    "content": "Unitaires, intégration, E2E et sécurité (SAST/DAST) avec couverture > 80%.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "qualite_securite"
+  },
+  {
+    "title": "Supervision et PRA",
+    "content": "Journalisation centralisée, SIEM temps réel et PRA avec RPO 15 min / RTO 2 h.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "qualite_securite"
+  },
+
+  {
+    "title": "Livrables documentation",
+    "content": "Dossier d’architecture, dossiers d’exploitation, manuels utilisateurs et guides d’administration.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "livrables_resultats"
+  },
+  {
+    "title": "Code & CI/CD",
+    "content": "Dépôts GitLab, pipelines CI/CD et scripts IaC Terraform.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "livrables_resultats"
+  },
+  {
+    "title": "Qualité & KPI",
+    "content": "Rapports de tests, matrice de traçabilité et KPI de performance.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "livrables_resultats"
+  },
+  {
+    "title": "Formation & BI",
+    "content": "Plan de formation, supports e-learning et tableaux de bord Power BI.",
+    "classe": "SolutionTechnique",
+    "sous_classe": "livrables_resultats"
+  },
+
+  {
+    "title": "Approche Agile Scrum",
+    "content": "Sprints de 2 semaines, backlog priorisé par la MOA, démos en fin d’itération.",
+    "classe": "Methodologie",
+    "sous_classe": "approche_methodologie"
+  },
+  {
+    "title": "Cadrage design thinking",
+    "content": "Ateliers, personas, user stories et story mapping pour aligner la vision.",
+    "classe": "Methodologie",
+    "sous_classe": "approche_methodologie"
+  },
+  {
+    "title": "Prototypage rapide",
+    "content": "Maquettes Figma validées par les métiers avant développement.",
+    "classe": "Methodologie",
+    "sous_classe": "approche_methodologie"
+  },
+  {
+    "title": "DevOps & dette technique",
+    "content": "Livraison continue, monitoring dès J1 et gestion planifiée de la dette.",
+    "classe": "Methodologie",
+    "sous_classe": "approche_methodologie"
+  },
+
+  {
+    "title": "Gouvernance projet",
+    "content": "Comité de pilotage mensuel, comité projet hebdomadaire et points quotidiens.",
+    "classe": "Methodologie",
+    "sous_classe": "pilotage_planning"
+  },
+  {
+    "title": "Planning macro",
+    "content": "Plan sur 6 mois avec jalons de mise en production et Gantt détaillé.",
+    "classe": "Methodologie",
+    "sous_classe": "pilotage_planning"
+  },
+  {
+    "title": "Indicateurs de suivi",
+    "content": "Reste à faire, vélocité, burn-down chart et respect des SLA.",
+    "classe": "Methodologie",
+    "sous_classe": "pilotage_planning"
+  },
+  {
+    "title": "Gestion des risques",
+    "content": "Matrice probabilité/impact et plans de mitigation associés.",
+    "classe": "Methodologie",
+    "sous_classe": "pilotage_planning"
+  },
+
+  {
+    "title": "Rôles & responsabilités",
+    "content": "RACI : Product Owner côté client, Scrum Master côté intégrateur.",
+    "classe": "Methodologie",
+    "sous_classe": "gestion_projet"
+  },
+  {
+    "title": "Outils projet",
+    "content": "Jira pour le suivi, Confluence pour la documentation, GitLab pour le code.",
+    "classe": "Methodologie",
+    "sous_classe": "gestion_projet"
+  },
+  {
+    "title": "Gestion des changements",
+    "content": "Processus de Change Request avec évaluation d’impact coût/délai.",
+    "classe": "Methodologie",
+    "sous_classe": "gestion_projet"
+  },
+  {
+    "title": "Qualité & onboarding",
+    "content": "Procédure d’assurance qualité et onboarding des nouveaux membres.",
+    "classe": "Methodologie",
+    "sous_classe": "gestion_projet"
+  },
+
+  {
+    "title": "Chef de projet",
+    "content": "Senior, 12 ans d’expérience, certifié PMP, 15 déploiements ERP dirigés.",
+    "classe": "Equipe",
+    "sous_classe": "equipe_projet_cv"
+  },
+  {
+    "title": "Architecte logiciel",
+    "content": "10 ans d’expérience, microservices/Kubernetes, certifié AWS Solutions Architect.",
+    "classe": "Equipe",
+    "sous_classe": "equipe_projet_cv"
+  },
+  {
+    "title": "Data engineer",
+    "content": "6 ans, Spark et Databricks, 20 pipelines analytiques industrialisés.",
+    "classe": "Equipe",
+    "sous_classe": "equipe_projet_cv"
+  },
+  {
+    "title": "UX/UI designer",
+    "content": "7 ans, accessibilité RGAA, maîtrise de Figma et tests utilisateurs.",
+    "classe": "Equipe",
+    "sous_classe": "equipe_projet_cv"
+  },
+
+  {
+    "title": "Proposition forfaitaire",
+    "content": "Forfait 1 800 000 MAD incluant conception, réalisation, tests et MEP ; 20% à la commande, 40% à mi-parcours, 40% à la réception.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "proposition_financiere"
+  },
+  {
+    "title": "Régie et TJM",
+    "content": "Régie au TJM moyen de 4 500 MAD/jour, plafonnée à 220 jours-homme.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "proposition_financiere"
+  },
+  {
+    "title": "Tarification mixte",
+    "content": "Socle forfaitaire + options modulaires (maintenance, support 24/7).",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "proposition_financiere"
+  },
+  {
+    "title": "Indexation & coûts",
+    "content": "Indexation annuelle SYNTEC ; prix fermes 12 mois ; coûts cloud refacturés au réel.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "proposition_financiere"
+  },
+
+  {
+    "title": "Cadre contractuel",
+    "content": "Contrat MSA + SOW ; propriété intellectuelle transférée à l’issue du paiement.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "cadre_juridique_administratif"
+  },
+  {
+    "title": "Confidentialité & RGPD",
+    "content": "NDA et protection des données conformes au RGPD.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "cadre_juridique_administratif"
+  },
+  {
+    "title": "Pénalités de retard",
+    "content": "0,5% du montant par jour ouvré, plafonnées à 10%.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "cadre_juridique_administratif"
+  },
+  {
+    "title": "Garantie & acceptation",
+    "content": "Garantie corrective 90 jours, assurance RC Pro et Cyber, PV de recette avec critères objectifs.",
+    "classe": "ConditionsCommerciales",
+    "sous_classe": "cadre_juridique_administratif"
+  }
+]
