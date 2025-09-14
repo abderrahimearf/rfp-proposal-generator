@@ -1,0 +1,147 @@
+/* ===============================
+   Dashboard – styles modernes (compact)
+   =============================== */
+
+:root {
+
+  --card-bg: #ffffff;
+  --text-strong: #111827;
+  --text: #374151;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 4px 12px rgba(0,0,0,.06);
+  --radius: 16px;
+
+  --gap: 24px;
+  --card-padding: 24px;
+  --kpi-icon-size: 52px;
+  --chart-h: 260px;  /* hauteur identique pour les 2 charts */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1220;
+    --card-bg: #0f172a;
+    --text-strong: #e5e7eb;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: #1f2937;
+    --shadow: 0 8px 24px rgba(0,0,0,.25);
+  }
+}
+
+/* MODE COMPACT */
+.dashboard--compact {
+  --gap: 16px;
+  --card-padding: 16px;
+  --kpi-icon-size: 44px;
+  --chart-h: 240px;
+  --radius: 12px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.dashboard {
+  background: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+/* ====== Layout PAGE ======
+   1ère rangée : 3 KPI
+   2ème rangée : 2 charts
+*/
+.dashboard__main {
+  padding: var(--gap);
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas:
+    "kpis"
+    "charts";
+  gap: var(--gap);
+}
+
+/* ----- Rangée KPI : 3 colonnes alignées ----- */
+.kpis-row {
+  grid-area: kpis;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  align-items: stretch;         /* KPI mêmes hauteurs */
+}
+
+/* ----- Rangée CHARTS : 2 colonnes alignées ----- */
+.charts-row {
+  grid-area: charts;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: stretch;         /* charts mêmes hauteurs */
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .kpis-row   { grid-template-columns: repeat(2, 1fr); }
+  .charts-row { grid-template-columns: 1fr; } /* charts l’un sous l’autre */
+}
+@media (max-width: 640px) {
+  .kpis-row   { grid-template-columns: 1fr; } /* KPI empilées */
+}
+
+/* ====== Cartes ====== */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%;                 /* <— pour égaliser dans la rangée */
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,.06);
+}
+
+/* ====== KPI ====== */
+.card--kpi { flex-direction: row; align-items: center; gap: 14px; }
+.kpi__icon { width: var(--kpi-icon-size); height: var(--kpi-icon-size); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.kpi-img-icon { width: 24px; height: 24px; object-fit: contain; }
+.kpi__value { font-size: 22px; font-weight: 800; color: var(--text-strong); line-height: 1.1; }
+.dashboard--compact .kpi__value { font-size: 20px; }
+.kpi__label { color: var(--muted); margin-top: 4px; font-size: 14px; }
+
+.bg-red-soft{background:#fee2e2;}
+.bg-purple-soft{background:#ede9fe;}
+.bg-green-soft{background:#dcfce7;}
+
+/* ====== Chart Card ====== */
+.chart-card__header { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.chart-card__title-icon { width:20px; height:20px; opacity:.85; }
+.chart-card__title { font-size:16px; font-weight:700; color:var(--text-strong); margin:0; }
+
+/* Hauteur fixe pour les 2 charts → alignement parfait */
+.chart-card__inner { height: var(--chart-h); min-height: 0; }
+
+/* Empty state */
+.empty-state { display:flex; align-items:center; justify-content:center; height:100%; color:var(--muted); padding:48px; }
+
+/* Recharts peaufinage */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line { stroke: var(--border); }
+.recharts-xAxis .recharts-cartesian-axis-tick-value,
+.recharts-yAxis .recharts-cartesian-axis-tick-value,
+.recharts-legend-item-text { fill: var(--muted); font-size: 12px; }
+
+.recharts-default-tooltip {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+  box-shadow: var(--shadow) !important;
+}

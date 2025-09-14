@@ -1,0 +1,156 @@
+/* --- Conteneur global de l'éditeur --- */
+.tiptap-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* --- Barre d'outils --- */
+.tiptap-menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tiptap-menu-bar button {
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tiptap-menu-bar button:hover {
+  background-color: #e5e7eb;
+}
+
+.tiptap-menu-bar button.is-active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* --- Zone d'édition --- */
+.tiptap-container .ProseMirror {
+  flex-grow: 1;
+  padding: 1rem;
+  outline: none;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+.ProseMirror h2 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+/* --- Styles pour les images et tableaux dans l'éditeur --- */
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.ProseMirror img.ProseMirror-selectednode {
+  outline: 3px solid #68cef8;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+}
+.ProseMirror th,
+.ProseMirror td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  min-width: 1em;
+  vertical-align: top;
+  position: relative;
+}
+.ProseMirror th {
+  font-weight: bold;
+  background-color: #f3f4f6;
+}
+.ProseMirror .resize-cursor {
+  cursor: col-resize;
+}
+.ProseMirror .selectedCell:after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: rgba(200, 200, 255, 0.4);
+  pointer-events: none;
+}
+
+
+
+
+/* ... (gardez tous vos styles existants pour .tiptap-container, .ProseMirror, etc.) ... */
+
+/* ================================================= */
+/* == NOUVEAUX STYLES POUR LE SÉLECTEUR DE TABLEAU == */
+/* ================================================= */
+
+/* Conteneur pour le bouton et le pop-up, pour bien le positionner */
+.table-inserter-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Le pop-up qui contient la grille */
+.table-grid-popup {
+  position: absolute;
+  top: 100%; /* Apparaît juste en dessous du bouton */
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* La grille elle-même */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 10 colonnes */
+  gap: 3px;
+}
+
+/* Chaque cellule de la grille */
+.table-grid-cell {
+  width: 20px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+.table-grid-cell:hover {
+  background-color: #e0e0e0;
+}
+
+/* La cellule survolée et toutes celles avant elle sont mises en surbrillance */
+.table-grid-cell.highlighted {
+  background-color: #b3d4fc;
+  border-color: #6a9ae2;
+}
+
+/* Le texte en bas qui affiche la taille (ex: "4 x 5") */
+.table-grid-display {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #555;
+}

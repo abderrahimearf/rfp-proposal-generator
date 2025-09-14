@@ -1,0 +1,134 @@
+/* ===================== Thème commun ===================== */
+:root{
+  --panel: #e5e7eb;
+  --panel-border: #d1d5db;
+  --text: #111827;
+  --muted: #6b7280;
+  --accent: #374151;
+  --accent-strong: #4b5563;
+  --success: #10B981;
+  --error: #EF4444;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --container: 1200px;
+  --gap: 1.25rem;
+  --header-h: 64px;
+}
+
+/* ===================== Layout ===================== */
+.page{
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr; /* header + contenu */
+}
+
+/* Ancien centrage vertical => remplacé par top-align plus compact */
+.main-center{
+  /* valeurs par défaut pour d'autres pages si tu réutilises la classe */
+  min-height: calc(100dvh - var(--header-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Version compacte/spécifique à cette page */
+.page--compact .main-center.main-center--top{
+  min-height: auto;                 /* évite la pleine hauteur */
+  align-items: flex-start;          /* pas de centrage vertical */
+  justify-content: center;
+  padding: 1.25rem 1rem;            /* padding réduit */
+}
+
+.container{ width:100%; max-width: var(--container); margin: 0 auto; }
+
+/* ===================== Carte ===================== */
+.card{
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+.card--narrow{ width: min(100%, 760px); margin-inline: auto; }
+
+/* version compacte de la carte */
+.page--compact .card--compact{
+  padding: 1.25rem;                 /* -40% padding vertical */
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+
+.card__title{ font-size: 1.25rem; margin: 0 0 .5rem; color: rgba(6,6,6,.85); }
+.card__desc{ color: var(--muted); line-height: 1.6; margin: 0 0 1rem; max-width: 65ch; }
+
+/* ===================== Formulaire ===================== */
+.form-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  margin-bottom: 1rem;
+}
+@media (min-width: 720px){
+  .form-grid{ grid-template-columns: 1fr 1fr; }
+  .form-grid .field:nth-child(3){ grid-column: span 2; max-width: 360px; }
+}
+
+/* plus compact pour cette page */
+.page--compact .form-grid--compact{
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.field{ display:flex; flex-direction: column; gap: .4rem; }
+.label{ font-weight: 700; font-size: .95rem; }
+
+.input{
+  width: 100%;
+  padding: 10px 12px;               /* -15% */
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  background: #f3f4f6;
+  color: var(--text);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+.input:focus{ outline: 2px solid #60A5FA; outline-offset: 2px; }
+
+/* Upload fichier (label bouton) */
+.input-file{ display: none; }
+
+.file-name{
+  margin-top: .7rem;
+  color: var(--muted);
+  font-size: .95rem;
+  word-break: break-word;
+}
+
+/* ===================== Boutons ===================== */
+.btn{
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5rem; padding: 10px 14px; border-radius: 10px;   /* -15% */
+  border: 1px solid var(--panel-border);
+  font-weight: 600; font-size: 1rem; cursor: pointer;
+  transition: transform .06s ease-in-out, background-color .2s;
+  user-select: none;
+}
+.btn--block{ width: 100%; margin-top: .9rem; }
+.btn:active{ transform: translateY(1px); }
+
+.btn--ghost{ background: #f9fafb; color: var(--text); }
+.btn--ghost:hover{ background: #e5e7eb; }
+
+.btn--primary{ background: var(--accent); color: #f9fafb; border-color: var(--accent-strong); }
+.btn--primary:hover{ background: var(--accent-strong); }
+.btn--primary:disabled{ background: #1f2937; color: #6b7280; cursor: not-allowed; }
+
+/* ===================== Statuts ===================== */
+.status{
+  margin-top: .8rem; padding: 10px; border-radius: 10px;
+  text-align: center; font-weight: 600; border: 1px solid transparent;
+}
+.status--ok{ background: rgba(16,185,129,.10); color: var(--success); border-color: rgba(16,185,129,.25); }
+.status--err{ background: rgba(239,68,68,.10); color: var(--error); border-color: rgba(239,68,68,.25); }

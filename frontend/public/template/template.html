@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Proposition de Solution - {client}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #005A9C;
+            --light-grey:    #F8F9FA;
+            --border-color:  #DEE2E6;
+            --text-color:    #212529;
+            --white:         #FFFFFF;
+            --shadow:        rgba(0, 0, 0, 0.08);
+            --font-main:     'Lato', 'Helvetica Neue', Arial, sans-serif;
+        }
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0; padding: 40px;
+            background-color: var(--light-grey);
+            font-family: var(--font-main);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .document-wrapper {
+            max-width: 210mm; min-height: 297mm;
+            margin: 0 auto;
+            background-color: var(--white);
+            box-shadow: 0 4px 25px var(--shadow);
+            padding: 25mm; border-radius: 6px;
+        }
+        h1, h2 { font-weight: 700; }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            gap: 40px; margin-bottom: 40px;
+        }
+        .info-label {
+            font-size: .8em; color: #6c757d;
+            text-transform: uppercase; letter-spacing: .5px;
+        }
+        .info-value {
+            font-size: 1em; font-weight: 700;
+            padding: 4px 0; border-bottom: 1px solid var(--border-color);
+        }
+        .logo img { max-height: 60px; object-fit: contain; }
+
+        .section {
+            margin-top: 35px; page-break-inside: avoid;
+        }
+        .section h2 {
+            font-size: 1.4em; color: var(--text-color);
+            margin-bottom: 10px; padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .section .content {
+            padding: 5px 0; font-size: .95em;
+        }
+
+        main[contenteditable] table {
+            width: 100%; border-collapse: collapse; margin-top: 20px;
+        }
+        main[contenteditable] th,
+        main[contenteditable] td {
+            border: 1px solid var(--border-color);
+            padding: 8px; text-align: left;
+        }
+        main[contenteditable] th {
+            background-color: var(--light-grey);
+        }
+
+        .action-button {
+            display: block; width: fit-content;
+            margin: 20px auto 0; padding: 12px 25px;
+            background-color: var(--primary-color); color: var(--white);
+            border: none; border-radius: 5px;
+            font-size: 1em; font-weight: 700;
+            cursor: pointer; text-decoration: none;
+            transition: background-color .2s, transform .2s;
+        }
+        .action-button:hover {
+            background-color: #004170;
+            transform: translateY(-2px);
+        }
+
+        /* === Modal Styles === */
+        #modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        #modal {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 6px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+        #modal h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+        #modal .field {
+            margin-bottom: 12px;
+        }
+        #modal .field label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: .9em;
+        }
+        #modal .field input[type="text"],
+        #modal .field textarea,
+        #modal .field input[type="number"] {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: .95em;
+        }
+        #modal .buttons {
+            text-align: right;
+            margin-top: 16px;
+        }
+        #modal .buttons button {
+            margin-left: 8px;
+            padding: 8px 14px;
+            font-size: .95em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #modal .buttons .confirm {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        #modal .buttons .cancel {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        @page { size: A4; margin: 25mm; }
+        @media print {
+            body { background: none; padding: 0; }
+            .document-wrapper {
+                box-shadow: none; margin: 0; padding: 0;
+                width: auto; border-radius: 0;
+            }
+            .action-button { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-wrapper">
+        <header class="header">
+            <div class="info-group">
+                <div class="info-item" style="margin-bottom:15px;">
+                    <h1>Proposition de Solution</h1>
+                    <div class="info-label">Client</div>
+                    <div class="info-value">{{ client }}</div>
+                </div>
+                <div class="info-item" style="margin-bottom:15px;">
+                    <div class="info-label">Projet</div>
+                    <div class="info-value">{{ project }}</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Date de soumission</div>
+                    <div class="info-value">{{ submission_time }}</div>
+                </div>
+            </div>
+            <div class="logo">
+                <img src="https://www.iam.ma/ImagesMarocTelecom/Phototh%C3%A8que/Images-originales/maroc-telecom-logo-3267-4-originale.jpg" alt="Logo Maroc Telecom">
+            </div>
+        </header>
+
+        <main contenteditable="true">
+            <h1></h1>
+            <section class="section">
+                <h2>1. Introduction & Contexte</h2>
+                <div class="content">{{ introduction }}</div>
+            </section>
+            <section class="section">
+                <h2>2. Problématique</h2>
+                <div class="content">{{ problematique }}</div>
+            </section>
+            <section class="section">
+                <h2>3. Objectifs et Attentes</h2>
+                <div class="content">{{ objectifs_et_attentes }}</div>
+            </section>
+        </main>
+
+        <button id="add-section-button" class="action-button">⊕ Ajouter une Section</button>
+        <button id="add-table-button" class="action-button">⊕ Ajouter un tableau</button>
+    </div>
+
+    <!-- Modal générique -->
+    <div id="modal-overlay">
+      <div id="modal">
+        <h3 id="modal-title"></h3>
+        <div id="modal-body"></div>
+        <div class="buttons">
+          <button class="cancel">Annuler</button>
+          <button class="confirm">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const overlay = document.getElementById('modal-overlay');
+      const modalTitle = document.getElementById('modal-title');
+      const modalBody = document.getElementById('modal-body');
+      const btnConfirm = overlay.querySelector('.confirm');
+      const btnCancel  = overlay.querySelector('.cancel');
+
+      function showModal({ title, fields, onConfirm }) {
+        modalTitle.textContent = title;
+        modalBody.innerHTML = ''; 
+        fields.forEach(f => {
+          const div = document.createElement('div');
+          div.className = 'field';
+          div.innerHTML = `<label>${f.label}</label>`;
+          if (f.type === 'textarea') {
+            const ta = document.createElement('textarea');
+            ta.value = f.value || '';
+            ta.rows = f.rows || 3;
+            div.appendChild(ta);
+          } else {
+            const inp = document.createElement('input');
+            inp.type = f.type;
+            inp.value = f.value || '';
+            if (f.placeholder) inp.placeholder = f.placeholder;
+            if (f.min !== undefined) inp.min = f.min;
+            div.appendChild(inp);
+          }
+          modalBody.appendChild(div);
+        });
+        overlay.style.display = 'flex';
+
+        function cleanup() {
+          overlay.style.display = 'none';
+          btnConfirm.removeEventListener('click', onOk);
+          btnCancel.removeEventListener('click', onCancel);
+        }
+        function onOk() {
+          const values = Array.from(modalBody.querySelectorAll('.field')).map(fd => {
+            const input = fd.querySelector('input, textarea');
+            return input.value.trim();
+          });
+          cleanup();
+          onConfirm(values);
+        }
+        function onCancel() {
+          cleanup();
+        }
+        btnConfirm.addEventListener('click', onOk);
+        btnCancel.addEventListener('click', onCancel);
+      }
+
+      // Section
+      document.getElementById('add-section-button').addEventListener('click', () => {
+        showModal({
+          title: 'Nouvelle Section',
+          fields: [
+            { label: 'Titre de la section', type: 'text', value: 'Nouvelle Section' },
+            { label: 'Contenu initial',      type: 'textarea', value: '' }
+          ],
+          onConfirm: ([titre, contenu]) => {
+            const section = document.createElement('section');
+            section.className = 'section';
+            section.innerHTML = `<h2>${titre}</h2><div class="content">${contenu}</div>`;
+            document.querySelector('main[contenteditable]').appendChild(section);
+            section.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Tableau
+      document.getElementById('add-table-button').addEventListener('click', () => {
+        showModal({
+          title: 'Nouveau Tableau',
+          fields: [
+            { label: 'Nombre de lignes (incluant en-tête)', type: 'number', value: '2', min: 1 },
+            { label: 'Nombre de colonnes',                  type: 'number', value: '3', min: 1 },
+            { label: 'Noms des colonnes (séparés par ,)',    type: 'text',   value: 'Col1,Col2,Col3' }
+          ],
+          onConfirm: ([rowsStr, colsStr, headersRaw]) => {
+            const rows = parseInt(rowsStr, 10);
+            const cols = parseInt(colsStr, 10);
+            const headers = headersRaw.split(',').map(h => h.trim()).slice(0, cols);
+            const table = document.createElement('table');
+
+            // thead
+            const thead = document.createElement('thead');
+            const trHead = document.createElement('tr');
+            headers.forEach(h => {
+              const th = document.createElement('th');
+              th.textContent = h;
+              trHead.appendChild(th);
+            });
+            thead.appendChild(trHead);
+            table.appendChild(thead);
+
+            // tbody
+            const tbody = document.createElement('tbody');
+            for (let i = 1; i < rows; i++) {
+              const tr = document.createElement('tr');
+              for (let j = 0; j < headers.length; j++) {
+                const td = document.createElement('td');
+                td.textContent = '';
+                tr.appendChild(td);
+              }
+              tbody.appendChild(tr);
+            }
+            table.appendChild(tbody);
+
+            document.querySelector('main[contenteditable]').appendChild(table);
+            table.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+</body>
+</html>

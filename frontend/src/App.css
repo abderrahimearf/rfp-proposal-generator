@@ -1,0 +1,679 @@
+/* =========================================================
+   Thème — modifie seulement ces variables pour changer l'UI
+   =========================================================  0f172a*/
+
+:root{
+  --bg: linear-gradient(
+    90deg,
+    #5e6d8c 0%,     /* bleu clair */
+    #556b9b 50%,    /* violet */
+    #4c566d 100%    /* rose */
+  );          /* fond de l'app */
+  --panel: #0b1220;           /* sidebar */
+  --text: #e5e7eb;            /* texte clair */
+  --muted: #a1a1aa;           /* texte secondaire */
+  --border: rgba(255,255,255,.12);
+
+  --surface: #ffffff;         /* cartes claires (document / bulles assistant) */
+  --surface-text: #0f172a;
+
+  --primary: #22d3ee;         /* accent */
+  --primary-600:#0891b2;      /* hover */
+  --accent-blue:#2563eb;
+
+  --radius: 12px;
+  --shadow: 0 10px 25px rgba(2,8,23,.25);
+}
+
+/* Base / reset léger */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--primary); outline-offset:2px}
+
+/* =========================================================
+   Layout général
+   ========================================================= */
+.app{
+  display:flex;
+  min-height:100vh;
+  height:auto;
+  overflow:auto;
+}
+
+/* Sidebar gauche */
+.sidebar{
+  width:240px;
+  display:flex; flex-direction:column; gap:16px;
+  padding:16px;
+  background:linear-gradient(180deg, var(--panel), #0a0f1c 70%);
+  border-right:1px solid var(--border);
+  position:sticky; top:0; height:100vh;
+}
+.brand{display:flex; align-items:center; gap:10px}
+.brand-logo{width:100%; height:auto; border-radius:8px; object-fit:cover}
+.brand-name{font-size:1rem; font-weight:700; color:#fff; letter-spacing:.3px}
+
+.nav{flex:1; display:flex; flex-direction:column; gap:10px}
+.nav-item{
+  display:block; width:100%;
+  padding:10px 12px;
+  text-align:center;
+  color:var(--text);
+  background:transparent;
+  border:1px solid var(--border);
+  border-radius:10px;
+  cursor:pointer;
+  transition:.2s;
+}
+.nav-item:hover{background:rgba(255,255,255,.06)}
+.nav-item.active{background:rgba(255,255,255,.12); font-weight:600}
+
+.sidebar-footer{margin-top:auto}
+
+/* Colonne principale */
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+.header{
+  position:sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:10px 16px;
+  background:rgb(44, 45, 67);
+  border-bottom:1px solid var(--border);
+}
+.header-titles h2{margin:0; color:#fff; font-size:1.25rem}
+.subtitle{margin:2px 0 0; color:#d1d5db; font-size:.9rem}
+
+/* Boutons génériques */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; border-radius:10px;
+  border:1px solid transparent;
+  cursor:pointer; transition:.2s;
+  font-weight:600;
+}
+.btn--primary{background:var(--primary); color:#06202a}
+.btn--primary:hover{background:var(--primary-600); color:#e6faff}
+.btn--ghost{background:transparent; color:#fff; border-color:var(--border)}
+.btn--ghost:hover{background:rgba(255,255,255,.08)}
+
+/* Compat : si ton HTML utilise .new-button */
+.new-button{ composes: btn btn--ghost; } /* si PostCSS non dispo : recopie manuelle */
+.new-button{
+  display:inline-flex; align-items:center;
+  background:transparent; color:#fff; border:1px solid var(--border);
+  padding:8px 14px; border-radius:10px; cursor:pointer; transition:.2s;
+}
+.new-button:hover{background:rgba(255,255,255,.08)}
+
+/* Barre de recherche dans le header (optionnelle) */
+.search-bar{
+  position:absolute; right:16px; top:10px;
+  display:flex; align-items:center; gap:8px;
+  width:360px; max-width:40vw;
+  background:rgba(255,255,255,.08); border:1px solid var(--border);
+  border-radius:999px; padding:6px 10px;
+}
+.search-bar input{
+  flex:1; border:none; background:transparent; color:#e5e7eb; outline:none;
+}
+.search-bar button{
+  border:none; background:transparent; color:#e5e7eb; cursor:pointer;
+}
+
+/* =========================================================
+   Workspace (doc + chat)
+   ========================================================= */
+.workspace{
+  display:grid;
+  grid-template-columns: 1fr 1fr;   /* 50% | 50% ; passe à 60/40 si besoin */
+  gap:16px;
+  padding:16px;
+  min-height:0;
+  overflow:hidden; /* le scroll se fait dans les panneaux */
+}
+
+/* Si ton HTML contient .content-panel intermédiaire */
+.content-panel{ display:contents; }
+
+/* Panneau Document */
+.document-preview{
+  background:var(--surface); color:var(--surface-text);
+  border-radius:18px; box-shadow:var(--shadow);
+  padding:12px;
+  overflow:auto; min-width:0; height:auto;
+}
+
+/* Panneau Chat */
+.chat-window{
+  display:flex; flex-direction:column; min-width:0; height:auto;
+  background: radial-gradient(1000px 480px at 70% -10%, rgba(34,211,238,.12), transparent 45%),
+              linear-gradient(180deg,#0b1220, #061019);
+  border-radius:18px; border:1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* Liste de messages */
+.message-list{
+  flex:1; padding:16px; overflow-y:auto; overflow-x:hidden;
+  display:flex; flex-direction:column; gap:10px;
+  box-sizing:border-box;
+  white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere;
+}
+.message{
+  max-width:78%;
+  padding:10px 14px; border-radius:16px; line-height:1.5;
+}
+.message.user{
+  align-self:flex-end; color:#fff; background:var(--accent-blue);
+  border-bottom-right-radius:6px;
+}
+.message.assistant{
+  align-self:flex-start; color:#0f172a; background:#f3f4f6;
+  border-bottom-left-radius:6px;
+}
+.message-image{max-width:260px; max-height:260px; border-radius:8px; display:block}
+
+/* =========================================================
+   Zone d'input (InstructionInput)
+   ========================================================= */
+.instruction-input-wrapper{
+  position:sticky; bottom:0;
+  padding:10px;
+  background:rgba(6,16,25,.7);
+  backdrop-filter:saturate(120%) blur(6px);
+  border-top:1px solid var(--border);
+}
+
+/* (Compat) si tu avais .input-container en position:absolute */
+.input-container{ position: static; }
+
+.image-preview-bar{
+  display:flex; align-items:center; gap:8px;
+  background:#e9ecef; color:#111827;
+  border-radius:8px; padding:4px 8px; margin-bottom:8px; font-size:14px;
+}
+.image-preview-bar img{width:32px; height:32px; border-radius:6px; object-fit:cover}
+.image-preview-bar span{
+  flex-grow:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.remove-image-button{
+  width:22px; height:22px; border-radius:50%;
+  background:#6b7280; color:#fff; border:none; display:flex; align-items:center; justify-content:center;
+  cursor:pointer; flex-shrink:0;
+}
+.remove-image-button:hover{background:#374151}
+
+.instruction-input{
+  display:flex; align-items:center; gap:8px;
+  background:#0b1220; border:1px solid var(--border);
+  border-radius:12px; padding:6px 8px;
+}
+.instruction-input textarea{
+  flex:1; background:transparent; color:#e5e7eb;
+  border:none; outline:none; resize:none; max-height:160px; overflow-y:auto;
+  font-size:15px; line-height:1.5;
+}
+.upload-icon-button{
+  border:none; background:transparent; color:#cbd5e1; cursor:pointer;
+  width:36px; height:36px; display:flex; align-items:center; justify-content:center; border-radius:50%;
+}
+.upload-icon-button:hover{background:rgba(255,255,255,.08)}
+.instruction-input button{
+  border:none; background:var(--primary); color:#06202a; font-weight:700;
+  padding:8px 14px; border-radius:10px; cursor:pointer; transition:.2s;
+}
+.instruction-input button:hover{background:var(--primary-600); color:#e6faff}
+.instruction-input button:disabled{background:#64748b; color:#1f2937; cursor:not-allowed}
+
+/* =========================================================
+   Éléments secondaires (listes, boutons ajout, etc.)
+   ========================================================= */
+.add-button{
+  display:flex; align-items:center; gap:6px;
+  background:#fff; color:#111827;
+  padding:8px 10px; border-radius:8px; cursor:pointer;
+  border:1px solid #e5e7eb; transition:.2s;
+}
+.add-button:hover{background:#e0f2fe; border-color:#bfdbfe}
+.plus-icon{font-weight:700}
+
+.section-list{flex:1; overflow-y:auto}
+.section-item{
+  display:flex; align-items:center; gap:8px;
+  padding:8px 10px; border:1px solid var(--border);
+  border-radius:8px; margin-bottom:8px; cursor:pointer; transition:.2s;
+}
+.section-item:hover{background:rgba(255,255,255,.06)}
+
+/* Sélecteur de templates (colonne gauche dans la sidebar) */
+.template-selector{
+  display:flex; flex-direction:column; gap:12px;
+  width:100%;
+}
+.selector-label{font-weight:700; color:#fff}
+
+/* Boutons de templates : largeur fixe + wrap du texte */
+.temp-button{
+  display:block; width:100%; min-height:42px;
+  padding:10px 12px; line-height:1.2; text-align:center;
+  color:#101214; background:#f3f4f6;
+  border:1px solid #e5e7eb; border-radius:10px;
+  margin-bottom: 10px;
+  cursor:pointer; transition:.2s;
+  white-space:normal; word-break:break-word; overflow-wrap:anywhere;
+}
+.temp-button:hover{background:#1c81c4; border-color:#0a0a0a}
+.temp-button:active{background:#cfeafe}
+
+/* =========================================================
+   Messages "legacy" (compat)
+   ========================================================= */
+.message.user{ /* déjà défini plus haut */ }
+.message.bot{  /* si ancien markup .bot au lieu de .assistant */
+  align-self:flex-start; color:#0f172a; background:#f3f4f6;
+  border-radius:16px; border-bottom-left-radius:6px; padding:10px 14px;
+}
+
+/* =========================================================
+   Responsif
+   ========================================================= */
+@media (max-width: 1200px){
+  .workspace{grid-template-columns: 3fr 2fr;} /* 60% | 40% */
+}
+@media (max-width: 900px){
+  .sidebar{width:200px}
+  .workspace{grid-template-columns: 1fr;} /* pile doc puis chat */
+}
+@media (max-width: 640px){
+  .sidebar{position:static; height:auto}
+  .search-bar{position:static; width:100%; max-width:none; margin-left:auto}
+}
+/* =======================
+   Layout : Templates | Doc | Chat
+   ======================= */
+
+/* 3 colonnes : 280px | 1fr | 1fr */
+.workspace{
+  display: grid !important;
+  grid-template-columns: 280px minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas: "templates doc chat";
+  gap: 16px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  padding: 16px;
+  min-height: 0;
+  overflow: hidden; /* le scroll se fait dans les panneaux */
+}
+
+/* Colonne Templates (gauche) */
+.side-panel{
+  grid-area: templates;
+  align-self: start;
+  position: sticky;            /* reste visible au scroll */
+  top: 72px;                   /* ≈ hauteur du header ; ajuste si besoin */
+  height: calc(100vh - 72px);  /* plein viewport sous le header */
+  overflow-y: auto;
+  background: rgba(91, 123, 145, 0.85);;
+  
+  border-radius: 16px;
+  padding: 12px;
+}
+
+/* Boutons de templates : largeur fixe + wrap */
+.temp-button{
+  width: 100%;
+  min-height: 42px;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* Document Preview (colonne centrale) */
+.document-preview{
+  grid-area: doc;
+  min-width: 0;         /* évite de forcer la grille */
+  overflow: auto;
+  background: #fff;
+  color: #0f172a;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(2,8,23,.25);
+  padding: 12px;
+}
+
+/* Chat (colonne droite) */
+.chat-window{
+  grid-area: chat;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border, rgba(255,255,255,.12));
+  background: rgba(91, 123, 145, 0.85);
+  
+  box-shadow: 0 10px 25px rgba(2,8,23,.25);
+}
+
+/* Empêche les anciens margins/largeurs de casser la grille */
+.document-preview, .chat-window{
+  margin: 0 !important;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+/* =======================
+   Responsif
+   ======================= */
+/* < 1100px : Templates plein large au-dessus, Doc | Chat en 2 colonnes */
+@media (max-width: 1100px){
+  .workspace{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "templates templates"
+      "doc chat";
+  }
+  .side-panel{
+    position: static;
+    height: auto;
+  }
+}
+
+/* < 800px : tout en pile */
+@media (max-width: 800px){
+  .workspace{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "templates"
+      "doc"
+      "chat";
+  }
+}
+/* largeur du template selector */
+.workspace{
+  grid-template-columns: 200px minmax(0,1fr) minmax(0,1fr); /* <- change 200px */
+}
+
+/* s'il existe ailleurs un width pour .side-panel / .template-selector, neutralise-le */
+.side-panel, .template-selector{ width: 100%; }  /* la grille contrôle la largeur */
+
+
+
+
+
+
+
+
+/* ======= Topbar style "capture" ======= */
+.topbar{
+  position:sticky; top:0; z-index:40;
+  display:flex; align-items:center; gap:16px;
+  padding:10px 14px;
+  background:#0c5b73;              /* bleu/teal comme la capture */
+  border-bottom:1px solid rgba(0,0,0,.15);
+}
+
+/* marque (logo + texte) */
+.topbar__brand{
+  display:flex; align-items:center; gap:8px; cursor:pointer; user-select:none;
+  min-width:0;
+}
+.topbar__brand img{width:22px; height:22px; object-fit:contain}
+.brand-text{
+  color:#e6f6fb; font-weight:800; letter-spacing:.2px; font-size:1rem;
+}
+
+/* liens centrés, en ligne */
+.topbar__nav{
+  display:flex; align-items:center; gap:18px;
+  margin-left:8px; margin-right:auto;      /* pousse la recherche à droite */
+  overflow-x:auto; scrollbar-width:none;
+}
+.topbar__nav::-webkit-scrollbar{display:none}
+.link{
+  background:transparent; border:none; color:#dbe7ec;
+  padding:4px 0; cursor:pointer; font-size:.92rem;
+  opacity:.9; transition:.15s;
+}
+.link:hover{opacity:1}
+.link.is-active{
+  color:#fff; font-weight:700; position:relative;
+}
+.link.is-active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px;
+  height:2px; background:#fff; border-radius:1px;
+}
+
+/* zone de recherche à droite */
+.topbar__search{
+  display:flex; align-items:center; gap:8px;
+  width:320px; max-width:40vw; flex:0 1 auto;
+}
+.topbar__search input{
+  flex:1; height:34px; border-radius:6px; border:1px solid rgba(0,0,0,.2);
+  padding:0 10px; background:#fff; color:#111827; outline:none;
+}
+.topbar__search input::placeholder{color:#8e9aa7}
+.topbar__search button{
+  height:34px; padding:0 12px; border:none; border-radius:6px;
+  background:#3b82f6; color:#fff; font-weight:700; cursor:pointer;
+  transition:.15s;
+}
+.topbar__search button:hover{filter:brightness(1.05)}
+
+/* responsif */
+@media (max-width: 720px){
+  .brand-text{display:none}
+  .topbar{gap:10px; padding:8px 10px}
+  .topbar__nav{gap:14px}
+  .topbar__search{width:200px; max-width:45vw}
+}
+@media (max-width: 520px){
+  .topbar__search{display:none;} /* garde une barre très compacte */
+}
+
+
+
+
+
+
+
+
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  background: #54677c; /* bleu/teal */
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+/* Logo */
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+.topbar__brand img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+.brand-text {
+  color: #e6f6fb;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* NAV au milieu */
+.topbar__nav {
+  flex: 1; /* occupe toute la largeur restante */
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center;
+  gap: 20px;
+}
+.link {
+  background: transparent;
+  border: none;
+  font-weight: 800;
+  color: #333862;
+  font-size: .9rem;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: .15s;
+}
+.link:hover { color: #fff; }
+.link.is-active {
+  color: #080808;
+  font-weight: 700;
+  position: relative;
+}
+.link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: #060606;
+  border-radius: 1px;
+}
+
+/* Responsif */
+@media (max-width: 720px) {
+  .brand-text { display: none; }
+  .topbar__nav { gap: 14px; flex-wrap: wrap; }
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  padding: 0 14px; /* On enlève le padding vertical car on gère avec une hauteur fixe */
+  background: linear-gradient(
+    90deg, 
+    rgba(161, 186, 193, 0.85) 0%, 
+    rgba(113, 172, 191, 0.85) 100%
+  );
+
+  border-bottom: 1px solid rgba(0, 0, 0, .15);
+
+  /* --- AJOUTS IMPORTANTS --- */
+  height: 50px; /* <-- Hauteur fixe pour que le header ne grandisse plus */
+  box-sizing: border-box; /* Bonne pratique pour que le padding soit inclus dans la hauteur */
+}
+
+/* Logo */
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* C'est ici que vous modifiez la taille du logo */
+.topbar__brand img { /* Ou .brand-logo si vous avez changé le sélecteur */
+  width: 100px;  /* <-- Nouvelle largeur (doit être < 50px) */
+  height: 100px; /* <-- Nouvelle hauteur (doit être < 50px) */
+  object-fit: contain;
+}
+
+/* ... le reste de votre CSS reste inchangé ... */
+.brand-text {
+  color: #173441;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+
+
+
+/* --- Fix: chat ne grandit plus, seul le contenu scrolle --- */
+:root{ --header-h: 50px; }               /* hauteur réelle de ta .topbar */
+
+.workspace{
+  height: calc(100vh - var(--header-h)); /* grille bornée au viewport */
+  min-height: 0;
+}
+
+.chat-window,
+.document-preview{
+  height: 100%;   /* chaque panneau remplit la grille */
+  min-height: 0;
+}
+
+.message-list{
+  flex: 1 1 auto; /* occupe l'espace restant dans le chat */
+  min-height: 0;  /* indispensable pour que le scroll fonctionne en flex/grid */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+
+
+/* ============================================= */
+/*  STYLE POUR LE RENDU MARKDOWN DANS LE CHAT   */
+/* ============================================= */
+
+/* Cible le conteneur généré par ReactMarkdown dans une bulle de message */
+.message div {
+  text-align: left; /* Aligne le texte à gauche pour une meilleure lisibilité */
+}
+
+/* Cible TOUS les éléments (paragraphes, listes) générés par Markdown */
+.message div > * {
+  margin-top: 0;
+  margin-bottom: 10px; /* Ajoute un petit espace uniforme sous chaque bloc */
+}
+
+/* Enlève le dernier espace pour un alignement parfait en bas de la bulle */
+.message div > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Style spécifique pour les listes à puces */
+.message div > ul {
+  padding-left: 20px; /* Indentation pour les puces */
+}
+
+/* Style pour les éléments de la liste */
+.message div > li {
+  margin-bottom: 5px; /* Petit espace entre chaque puce */
+}

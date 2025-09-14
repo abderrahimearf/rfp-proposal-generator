@@ -1,0 +1,813 @@
+.app {
+  display: flex;
+  /* FIX: laisser la page grandir et scroller */
+  min-height: 100vh;          /* was: height: 100vh */
+  height: auto;
+  overflow: auto;             /* was: overflow: hidden */
+  
+}
+
+.sidebar {
+  width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: flex-start;
+  height: 100vh; /* toute la hauteur de l'écran */
+  align-items: flex-start; /* start est mieux que start seul */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 100%;
+  width: 100%;
+  border-radius: 3%;
+}
+
+.brand-logo {
+  width: 100%;
+  height: auto; /* La hauteur visible */
+  object-fit: cover;  /* Remplit sans conserver toute l’image */
+  object-position: top center; /* Garde la partie du haut visible */
+  display: block;
+  border: #0c0c0c;
+}
+
+.brand-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: center; /* <-- change ici */
+  padding: 10px 8px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 6px 1px rgba(0,0,0,0.4);
+  font-family: cursive; /* police */
+  /* gras */
+  font-size: 1.2em; 
+  font-size: 1em;
+  color: #0c0c0c;
+  cursor: pointer;
+  border-radius: 9px;
+  transition: background-color .2s;
+  border: 0.5px solid #151515;
+}
+
+.nav-item:hover {
+  background-color: rgba(253, 251, 251, 0.2);
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+}
+
+/* ======================================================
+   Main & Header
+   ====================================================== */
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 5px;
+  background: linear-gradient(
+    135deg,
+    #343a48 0%,
+    #0d1b2a 50%,
+    #00d4aa 100%
+  );
+  font-family: cursive; 
+}
+.new-button {
+  display: inline-flex; /* même comportement que les autres */
+  align-items: center;  /* centre verticalement */
+  background-color: transparent;
+
+  border: none;
+  color: #fcfcfc;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color .2s;
+  font-family: cursive;
+  margin-left: 80px;
+  font-size: 1em;
+}
+
+.new-button:hover {
+  box-shadow: 0 5px 15px rgba(243, 241, 241, 0.3);
+  text-decoration: underline;
+  text-decoration-color: #f3f5f5; 
+  cursor: pointer;
+}
+
+.header-titles h2 {
+  margin: 0;
+  font-size: 1.9em;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9em;
+  color: #161816;
+  background-color: transparent;
+  font-family: cursive; 
+}
+
+/* ======================================================
+   Workspace: Side Panel & Content Panel
+   ====================================================== */
+
+.workspace {
+  display: flex;
+  flex: 1;
+  /* FIX: permettre le scroll si le contenu dépasse */
+  min-height: 0;        
+  overflow: auto;       /* was: hidden */
+}
+
+.side-panel {
+  width: 200px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-panel {
+  display: flex;
+  flex: 1;
+  /* FIX: laisser scroller le contenu */
+  overflow: auto;       /* was: hidden */
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------------
+   Template Selector
+   ------------------------------------------------------ */
+
+/* ------------------------------------------------------
+   Add Button
+   ------------------------------------------------------ */
+
+.add-button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  padding: 6px 8px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9em;
+  transition: background-color .2s;
+}
+
+.add-button:hover {
+  background-color: #ADD8E6;
+}
+
+.plus-icon {
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+/* ------------------------------------------------------
+   Section List
+   ------------------------------------------------------ */
+
+.section-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.section-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid #151515;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s;
+}
+
+.section-item:hover {
+  background-color: #f5f5f5;
+}
+
+.section-item input {
+  margin-right: 8px;
+}
+
+/* ------------------------------------------------------
+   Document Preview
+   ------------------------------------------------------ */
+
+.instruction-input {
+  display: flex;
+  align-items: flex-end;
+  border: 20px solid rgb(61, 171, 230);
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 2px solid rgb(173, 202, 218);
+  background: rgb(11, 11, 11);
+  width: 100%;
+  max-width: 800px; 
+  margin-left:2px ;
+  box-sizing: border-box;
+}
+
+.instruction-input textarea {
+  flex: 1;
+  resize: none; 
+  border: none;
+  background: transparent;
+  color: rgb(236, 228, 228);
+  font-size: 1em;
+  padding: 6px;
+  outline: none;
+  max-height: 200px; /* limite la hauteur */
+  overflow-y: auto; /* scroll si dépasse */
+}
+
+.send-button {
+  background-color: rgb(173, 202, 218);
+  border: none;
+  color: black;
+  padding: 0 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color .2s;
+  margin-left: 5px;
+}
+
+.send-button:hover {
+  background-color: rgb(79, 89, 220);
+}
+
+/* ------------------------------------------------------
+   Message List — scroll vertical only
+   ------------------------------------------------------ */
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.message {
+  margin-bottom: 0.75rem;
+  max-width: 70%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message.user {
+  margin-left: auto;
+  background: #dcf8c6;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.message.bot {
+  margin-right: auto;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  border-top: 5px solid #dc7979;
+}
+
+/* Votre InstructionInput existant */
+
+.user-button {
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px; 
+  background:transparent;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+.user-button:hover {
+  background-color: white;
+}
+
+.user-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.search-bar {
+  position: fixed;
+  /* distance du haut */
+  left: 50%; /* position horizontale au centre */
+  transform: translateX(-50%); /* centre parfaitement */
+  width: 400px; /* largeur fixe */
+  display: flex;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 5px 10px;
+  z-index: 1000; /* toujours au-dessus */
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: black;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+}
+
+/* Conteneur */
+
+.template-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  height: 90vh;
+ padding: 10px;
+ 
+  font-family: cursive;
+  width: 160px;
+  background: transparent;
+  margin-bottom: 10px;
+  border-radius: 4px;
+   background: rgba(255, 255, 255, 0.7);
+}
+
+/* Bouton */
+.temp-button {
+  background: transparent;
+  border: 1px solid #070707;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-family: cursive;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #0e0e0e;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%; /* ✅ bouton prend toute la largeur du parent */
+  word-wrap: break-word; /* ✅ coupe les mots longs */
+  white-space: normal;   /* ✅ permet le retour à la ligne */
+  text-align: center;    /* optionnel : centre le texte */
+}
+
+/* Label */
+.selector-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0c0c0c;
+  font-family: cursive;
+}
+
+/* Bouton */
+
+
+.temp-button:hover {
+  background: #8ac1d6;
+  border-color: #666;
+}
+
+.temp-button:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* (doublon) .app — on garde la même correction */
+.app {
+  display: flex;
+  /* FIX: même correction que plus haut */
+  min-height: 100vh;          /* was: height: 100vh */
+  height: auto;
+  overflow: auto;             /* was: hidden */
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;        
+}
+
+/* (doublon) .workspace — cohérent avec la correction plus haut */
+.workspace {
+  display: flex;
+  flex: 1;
+  min-height: 0;        
+  overflow: auto;       /* was: hidden */
+}
+
+.document-preview {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: 0;
+  border-radius: 25px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  overflow: auto; 
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  margin-bottom:10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.chat-window {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* on évite tout scroll ici */
+  border-radius: 10px;
+  margin-right: 5px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* === 4) Zone de messages — scroll ONLY vertical */
+.message-list {
+  flex: 1;
+  overflow-y: auto;     /* scrollbar verticale */
+  overflow-x: hidden;   /* PAS de scroll horizontal */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* === 5) Les bulles se coupent bien à la ligne */
+.message {
+  white-space: pre-wrap;    /* wrap + respecte les sauts de ligne */
+  word-break: break-word;   /* coupe les mots trop longs */
+  overflow-wrap: anywhere;  /* pour les très longs “aaaaaaaa…” */
+  max-width: 80%;           /* optionnel : pour ne pas faire 100% de large */
+}
+
+/* ========================================================== */
+/* STYLES POUR LA NOUVELLE ZONE DE SAISIE AVEC ICÔNE D'UPLOAD */
+/* ========================================================== */
+
+.instruction-input-wrapper {
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Barre qui apparaît quand une image est sélectionnée */
+.image-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f1f3f5;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #343a40;
+}
+
+.image-preview-bar img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-preview-bar span {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-image-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.remove-image-button:hover {
+  background-color: #343a40;
+}
+
+/* Conteneur principal de la zone de saisie */
+.instruction-input {
+  display: flex; /* Aligne les éléments sur une ligne */
+  align-items: center; /* Centre les éléments verticalement */
+  gap: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: #070707;
+
+}
+
+/* Zone de texte */
+.instruction-input textarea {
+  flex-grow: 1; /* Fait en sorte que le textarea prenne tout l'espace disponible */
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 8px 4px;
+  font-size: 14px;
+  color: rgb(239, 232, 232);
+  font-family: cursive;
+  line-height: 1.5;
+  max-height: 150px;
+  overflow-y: auto;
+ background: black;
+}
+
+/* Style de l'icône d'upload (qui est une balise <label>) */
+.upload-icon-button {
+  cursor: pointer;
+  padding: 6px;
+  color: #495057; /* Couleur de l'icône */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-icon-button:hover {
+  background-color: #f1f3f5;
+}
+
+/* Bouton "Envoyer" */
+.instruction-input button {
+  background-color: #007bff;
+  color: rgb(19, 19, 19);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.instruction-input button:hover {
+  background-color: #0056b3;
+}
+
+.instruction-input button:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Style pour les images dans la liste de messages */
+.message-image {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ========================================================== */
+/* STYLES POUR LA FENÊTRE DE CHAT (ChatWindow)                 */
+/* ========================================================== */
+
+.chat-window {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* S'assure que le chat prend la hauteur disponible */
+  
+  border-top: 1px solid #e5e7eb;
+}
+
+.message-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Style de base pour TOUS les messages */
+.message {
+  padding: 10px 14px;
+  border-radius: 18px;
+  max-width: 80%;
+  line-height: 1.5;
+  word-wrap: break-word; /* S'assure que les longs mots ne débordent pas */
+}
+
+/*
+ * ==========================================================
+ * MODIFICATION CLÉ : Styles spécifiques pour chaque rôle
+ * ==========================================================
+ */
+
+/* Style pour les messages de l'UTILISATEUR (bleu, à droite) */
+.message.user {
+  background-color: #007bff; /* Arrière-plan bleu */
+  color: white;             /* Texte blanc */
+  align-self: flex-end;     /* Aligne le message à droite */
+  border-bottom-right-radius: 4px; /* Petite variation pour le style "bulle" */
+}
+
+/* Style pour les messages de l'ASSISTANT (gris, à gauche) */
+.message.assistant {
+  background-color: #f1f3f5; /* Arrière-plan gris clair */
+  color: #212529;            /* Texte noir/gris foncé */
+  align-self: flex-start;    /* Aligne le message à gauche */
+  border-bottom-left-radius: 4px; /* Petite variation pour le style "bulle" */
+}
+
+/* ========================================================== */
+/* STYLES POUR LA NOUVELLE ZONE DE SAISIE (InstructionInput)  */
+/* ========================================================== */
+.instruction-input-wrapper {
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff; /* Fond blanc pour la zone de saisie */
+}
+
+.image-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #e9ecef;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.image-preview-bar img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.image-preview-bar span {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.remove-image-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.remove-image-button:hover {
+  background-color: #343a40;
+}
+
+.instruction-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: #f8f9fa; /* Fond légèrement gris pour la barre d'input */
+}
+
+.instruction-input textarea {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 8px 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  max-height: 150px;
+  overflow-y: auto;
+  background: transparent;
+  color: #000000;
+}
+
+.upload-icon-button {
+  cursor: pointer;
+  padding: 6px;
+  color: #495057;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-icon-button:hover {
+  background-color: #e9ecef;
+}
+
+.instruction-input button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.instruction-input button:hover {
+  background-color: #0056b3;
+}
+
+.instruction-input button:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Style pour les images dans la liste de messages */
+.message-image {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: block;
+}
+.instruction-input{
+  background: rgba(16,22,30,.9);
+  
+}
+.instruction-input-wrapper{
+  border-top: var(--border);
+ 
+  background: transparent;  /* supprime la bande */
+}
+
+
+
+
+
+
+
+
+
+

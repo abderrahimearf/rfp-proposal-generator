@@ -1,0 +1,33 @@
+{
+  "id": "brief-001",
+  "client": {
+    "contenu_initiale": "Nom ou organisation pour laquelle le projet est réalisé",
+    "contenu": "{{ client }}",
+    "ia_prompt": "Quel est le nom du client ou de l’organisation concernée par ce projet ?"
+  },
+  "project": {
+    "contenu_initiale": "Titre ou nom du projet",
+    "contenu": "{{ project }}",
+    "ia_prompt": "Quel est le nom ou le titre de ce projet ?"
+  },
+  "submission_time": {
+    "contenu_initiale": "Date ou moment de soumission du projet ou du rapport",
+    "contenu": "{{ submission_time }}",
+    "ia_prompt": "Quand ce projet ou document a-t-il été soumis ?"
+  },
+  "introduction": {
+    "contenu_initiale": "Présentation générale du projet, du contexte et des parties prenantes",
+    "contenu": "{{ introduction }}",
+    "ia_prompt": "Rédige une introduction pour un projet en précisant le contexte et les acteurs concernés."
+  },
+  "problematique": {
+    "contenu_initiale": "Problème principal que le projet tente de résoudre",
+    "contenu": "{{ problematique }}",
+    "ia_prompt": "Quelle est la problématique principale que ce projet cherche à résoudre ?"
+  },
+  "objectifs_et_attentes": {
+    "contenu_initiale": "Objectifs spécifiques du projet et les résultats attendus",
+    "contenu": "{{ objectifs_et_attentes }}",
+    "ia_prompt": "Quels sont les objectifs du projet et les attentes en termes de résultats ?"
+  }
+}

@@ -1,0 +1,276 @@
+/* ===========================
+   src/Home.css — v5
+   - Thème "Dark & Modern"
+   - Nouveau fond, nouvelles couleurs
+   =========================== */
+
+/* Base */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  
+ 
+}
+
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ===========================
+   COLONNE GAUCHE (INFORMATION)
+   =========================== */
+.info-panel {
+  flex-basis: 55%;
+  background-color: #0d1b2a; /* Bleu nuit très sombre */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 60px 60px;
+  color: #e2e8f0; /* Texte principal quasi-blanc */
+  position: relative;
+  overflow: hidden;
+}
+
+.info-panel-content {
+  max-width: 760px;
+  width: 100%;
+}
+
+/* Effet visuel subtil pour le fond */
+.info-panel::after {
+  content: "";
+  position: absolute;
+  right: -15%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: radial-gradient(circle at 70% 50%, rgba(0, 209, 178, 0.1) 0%, rgba(0, 209, 178, 0) 60%);
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+/* Logo + titres + texte */
+.logo { 
+  width: 200px; 
+  filter: invert(90%) sepia(10%) saturate(100%) hue-rotate(180deg) brightness(105%) contrast(95%); /* Adapte le logo au thème sombre */
+}
+
+.info-panel h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  color: #a0aec0; /* Gris clair pour le texte secondaire */
+}
+
+/* Liste de features */
+.feature-list { list-style: none; padding: 0; margin: 0; }
+.feature-item {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #e2e8f0;
+}
+.feature-item::before {
+  content: '✓';
+  color: #0d1b2a; /* Texte de l'icône sombre */
+  background-color: #00d1b2; /* Couleur accent (cyan) */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 209, 178, 0.2);
+}
+
+/* ===========================
+   COLONNE DROITE (CONNEXION)
+   =========================== */
+.login-panel {
+  flex-basis: 45%;
+  background-color: #141821; /* Gris-bleu sombre */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-panel h2 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #a0aec0; /* Gris clair */
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #cbd5e0; /* Gris encore plus clair pour les labels */
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1.5px solid #4a5568; /* Bordure grise */
+  border-radius: 6px;
+  background: #2d3748; /* Fond du champ gris foncé */
+  font-size: 1rem;
+  box-sizing: border-box; 
+  color: #ffffff; /* Texte de l'input en blanc */
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #00d1b2; /* Bordure accent au focus */
+  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.3);
+}
+
+/* Correction autofill pour thème sombre */
+.input-group input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 0 30px #2d3748 inset !important; 
+}
+
+.connect-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #00d1b2; /* Couleur accent */
+  color: #1a202c; /* Texte sombre pour contraster */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.connect-button:hover {
+  background-color: #00c4a7; /* Un peu plus clair au survol */
+}
+.connect-button:active {
+  transform: scale(0.98);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.9rem;
+  color: #a0aec0;
+}
+
+.signup-link a {
+  color: #00d1b2; /* Couleur accent */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.error-message {
+  color: #e53e3e; /* Rouge pour l'erreur */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  background-color: rgba(229, 62, 62, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* ===========================
+   FOOTER (CONTACT)
+   =========================== */
+.info-footer {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 40px;
+}
+
+.info-footer p {
+  font-size: 1rem;
+  color: #a0aec0;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #00d1b2; /* Couleur accent */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-icon {
+  font-size: 20px;
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+   =========================== */
+@media (max-width: 960px) {
+  .home-container { flex-direction: column; }
+  .info-panel {
+    order: 2;
+    padding: 30px 20px 40px;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+  }
+  .info-panel > * { max-width: 640px; }
+  .info-panel h1 { font-size: 2rem; }
+  .info-panel::after { display: none; }
+  .feature-item { justify-content: center; }
+  .info-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
